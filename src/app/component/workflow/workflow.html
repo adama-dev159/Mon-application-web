@@ -1,0 +1,108 @@
+<div class="page">
+
+  @if (ongletActif() === 'accueil') {
+    <div class="logo-wrapper">
+      <img src="/image-bhci.png" alt="Logo de la banque BHCI" class="logo" />
+    </div>
+    <header class="entete-accueil">
+      <h1>BH-Feedback</h1>
+    </header>
+  } @else {
+    <header class="entete-formulaire">
+      <div><img src="/image-bhci.png" alt="Logo de la banque BHCI" class="logo-petit" /></div>
+      <div><h1>BH-Feedback</h1></div>
+    </header>
+  }
+
+  @if (ongletActif() === 'accueil') {
+    <div class="accueil">
+      <h2 class="sous-titre">Vous avez une question, une préoccupation ou une idée à partager ?<br> Choisissez une option ci-dessous.</h2>
+
+      <section class="groupe">
+        <div class="cartes-grid">
+          <button matButton="elevated" class="carte-onglet carte-demande" (click)="changerOnglet('demande')">
+            <div class="carte-titre"><em>Demande</em></div>
+            <div class="carte-lien"></div>
+          </button>
+
+          <button matButton="elevated" class="carte-onglet carte-suggestion" (click)="changerOnglet('suggestion')">
+            <div class="carte-titre"><em>Suggestion</em></div>
+            <div class="carte-lien"></div>
+          </button>
+        </div>
+      </section>
+      <mat-divider />
+    </div>
+  }
+
+  @if (ongletActif() === 'demande' || ongletActif() === 'suggestion') {
+    <div class="formulaire-page">
+        <button matButton="elevated" (click)="changerOnglet('accueil')">
+              <em>Retour</em>
+        </button>
+
+      @if (ongletActif() === 'suggestion') {
+        <div class="contenu">
+          <h2>Suggestion</h2>
+          <p>Vous avez une suggestion ? Écrivez-nous</p>
+
+          <label for="nom-suggestion">Nom</label>
+          <input type="text" id="nom-suggestion" name="nom-suggestion" #nomSuggestionTexte />
+
+          <label for="email-suggestion">Email</label>
+          <input type="email" id="email-suggestion" name="email-suggestion" #emailSuggestionTexte />
+
+          <label for="suggestion">Suggestion</label>
+          <textarea id="suggestion" name="suggestion" #suggestionTexte></textarea>
+
+          @if (messageErreur()) {
+            <p class="erreur">{{ messageErreur() }}</p>
+          }
+          @if (messageSucces()) {
+            <p class="succes">{{ messageSucces() }}</p>
+          }
+
+          <div class="example-button-row">
+            <button matButton="elevated" (click)="envoyer(nomSuggestionTexte.value, emailSuggestionTexte.value, suggestionTexte.value, 'suggestion')">
+              <em>Envoyer</em>
+            </button>
+          </div>
+        </div>
+      }
+
+      @if (ongletActif() === 'demande') {
+        <div class="contenu">
+          <h2>Demande</h2>
+          <p>Vous avez une préoccupation ? Envoyez votre demande</p>
+
+          <label for="nom-demande">Nom</label>
+          <input type="text" id="nom-demande" name="nom-demande" #nomDemandeTexte />
+
+          <label for="email-demande">Email</label>
+          <input type="email" id="email-demande" name="email-demande" #emailDemandeTexte />
+
+          <label for="demande">Demande</label>
+          <textarea id="demande" name="demande" #demandeTexte></textarea>
+
+          @if (messageErreur()) {
+            <p class="erreur">{{ messageErreur() }}</p>
+          }
+          @if (messageSucces()) {
+            <p class="succes">{{ messageSucces() }}</p>
+          }
+
+          <div class="example-button-row">
+            <button matButton="elevated" (click)="envoyer(nomDemandeTexte.value, emailDemandeTexte.value, demandeTexte.value, 'demande')">
+              <em>Envoyer</em>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  <div class="pied">
+    <p>Contactez-nous via notre site internet</p>
+    <a href="https://www.bhci.ci/" target="_blank" rel="noopener">www.bhci.com</a>
+  </div>
+</div>

@@ -1,0 +1,251 @@
+.page {
+  position: relative;
+  margin: 0 auto;
+  padding: 24px 20px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+
+  background-image:
+    linear-gradient(rgba(207, 239, 133, 0.92), rgba(255, 255, 255, 0.92)),
+    url('/image-bhci.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---- Header page d'accueil : logo au-dessus + grand bandeau ---- */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.logo {
+  height: 90px;
+  width: auto;
+}
+
+.entete-accueil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0B1F3A;
+  border-radius: 12px;
+  box-shadow: 10px  15px rgba(205, 205, 12, 0.699);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.entete-accueil h1 {
+  font-size: 40px;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  border-radius: 12px;
+}
+
+/* ---- Header pages Demande/Suggestion : logo + titre sur la même ligne ---- */
+.entete-formulaire {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #0B1F3A;
+  padding: 1px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.logo-petit {
+  height: 90px;
+  width: auto;
+  justify-content: flex-start;
+}
+
+.entete-formulaire h1 {
+  font-size: 30px;
+  color: #ffffff;
+  margin: 0;
+}
+h1 {
+  font-size: 40px;
+  color: #1a1a1a;
+  background-color: #0B1F3A;
+  padding: 60px;
+  color: white;
+  text-align: center;
+}
+
+/* ---- Page d'accueil ---- */
+.accueil {
+  text-align: center;
+}
+
+.sous-titre {
+  color: #666;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.cartes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 32px 0;
+}
+
+@media (max-width: 560px) {
+  .cartes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.carte-onglet {
+  height: auto !important;
+  min-height: 140px;
+  padding: 28px 24px !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal !important;
+  border-radius: 16px !important;
+  border-left: 5px solid #b91c1c;
+  background: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.carte-suggestion {
+  border-left-color: #d97706;
+}
+
+.carte-onglet:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.carte-titre {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.carte-titre em {
+  font-style: normal;
+}
+
+.carte-lien {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #b91c1c;
+  width: 100%;
+  justify-content: center;
+}
+
+.carte-suggestion .carte-lien {
+  color: #d97706;
+}
+
+/* ---- Formulaire ---- */
+.formulaire-page {
+  animation: fadeIn 0.25s ease;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.btn-retour {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.contenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contenu h2 {
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.contenu p {
+  color: #444;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.contenu label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+
+.contenu textarea {
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  font-family: inherit;
+  background: #fff;
+}
+
+.contenu textarea:focus {
+  outline: none;
+  border-color: #b91c1c;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+.example-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.erreur {
+  color: #c0392b;
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.succes {
+  color: #1e8449;
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.pied {
+  margin-top: 150px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #0B1F3A;
+}
+
+.pied a {
+  color: #b91c1c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
