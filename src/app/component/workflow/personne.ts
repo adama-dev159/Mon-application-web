@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PersonneService {
-  private apiUrl = 'http://localhost:8080/api/Personne';
+  private apiUrl = 'https://app-65035535-0226-45fb-893e-9502144c33ef.cleverapps.io/api/Personne';
 
   constructor(private http: HttpClient) {}
 
